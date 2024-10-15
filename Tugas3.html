@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Tugas Praktikum 3</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+    <script src="script.js" defer></script> 
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 10rem; 
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 0.75rem 1rem; 
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="Foto.jpg" alt="Acedesign Logo" class="logo-img">
+                <span class="logo-text">Rapaaa</span>
+            </div>
+            <ul class="menu">
+                <li class="section-title">Menu</li>
+                <li><a href="#" class="active">Overview</a></li>
+                <li><a href="#">Orders</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Settings</a></li>
+                <li class="section-title">Business</li>
+                <li><a href="#">Shipment</a></li>
+                <li><a href="#">Employee</a></li>
+            </ul>
+            <div class="footer">
+                <p>Tugas Rapa</p>
+                <p>Teknologi Informasi 2024</p>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="search-container">
+                    <input type="text" placeholder="Search for product">
+                </div>
+                <div class="header-icons">
+                    <div class="icon" id="notificationIcon">🔔</div>
+                    <div class="dropdown">
+                        <div class="profile">
+                            <img src="Foto.jpg" alt="Profile Icon" class="profile-img">
+                        </div>
+                        <div class="dropdown-content">
+                            <a href="#">Profile</a>
+                            <a href="#">Settings</a>
+                            <a href="#">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Notification Panel -->
+            <div class="notification-panel" id="notificationPanel">
+                <h3>Notifications</h3>
+                <ul>
+                    <li>New product added!</li>
+                    <li>Order #1234 shipped!</li>
+                    <li>Your profile was updated.</li>
+                </ul>
+            </div>
+
+            <!-- Overview Section -->
+            <section class="overview">
+                <div class="card overview-card">
+                    <div class="card-content">
+                        <span>Total Sales</span>
+                        <h3>$27,340.00</h3>
+                        <span class="percentage positive">+24%</span>
+                    </div>
+                </div>
+                <div class="card overview-card">
+                    <div class="card-content">
+                        <span>Total Expenses</span>
+                        <h3>$7,340.00</h3>
+                        <span class="percentage negative">-32%</span>
+                    </div>
+                </div>
+                <div class="card overview-card">
+                    <div class="card-content">
+                        <span>Total Visitors</span>
+                        <h3>18,340</h3>
+                        <span class="percentage positive">+48%</span>
+                    </div>
+                </div>
+                <div class="card overview-card">
+                    <div class="card-content">
+                        <span>Total Orders</span>
+                        <h3>11,340</h3>
+                        <span class="percentage negative">-12%</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Income and Expenses Chart -->
+            <section class="chart-section">
+                <div class="card chart-card">
+                    <h3>Income vs Expenses</h3>
+                    <canvas id="barChart"></canvas> <!-- Tempat untuk Bar Chart -->
+                </div>
+            </section>
+
+            <!-- Popular Products -->
+            <section class="popular-products">
+                <h3>Popular Products</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Photos</th>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="iphone13.png" alt="Iphone 13"></td>
+                            <td>Iphone 13</td>
+                            <td>Apr 12, 2022</td>
+                            <td>Technic</td>
+                            <td>$99.89</td>
+                            <td>Available</td>
+                        </tr>
+                        <tr>
+                            <td><img src="macbook14.png" alt="Macbook 14"></td>
+                            <td>Macbook 14</td>
+                            <td>Apr 12, 2022</td>
+                            <td>Technic</td>
+                            <td>$99.89</td>
+                            <td>Available</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Action Button -->
+            <button class="action-button">Add New Product</button>
+        </div>
+
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <div class="profile-info">
+                <img src="Foto.jpg" alt="Profile Logo" class="right-sidebar-logo">
+                <h3>Rapaaa</h3>
+                <p>218 Products</p>
+                <p>2,580 Followers</p>
+            </div>
+            <div class="reputation">
+                <h4>Reputation</h4>
+                <p>Start Seller</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 78%;"></div>
+                </div>
+            </div>
+            <div class="recent-orders">
+                <h4>Recent Orders</h4>
+                <ul>
+                    <li>Watch 4x <span class="price">+$1280.00</span></li>
+                    <li>Macbook 4x <span class="price">+$8080.00</span></li>
+                    <li>Iphone13 4x <span class="price">+$5680.00</span></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+</body>
+</html>

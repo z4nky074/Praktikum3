@@ -1,0 +1,310 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+    font-size: 16px; /* Ukuran font dasar */
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #001F3F;
+    color: white;
+    width: 15rem; 
+    height: 100vh;
+    position: fixed;
+    padding: 1.25rem; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem; 
+}
+
+.sidebar .logo-img {
+    width: 2.5rem; 
+    height: 2.5rem; 
+}
+
+.sidebar .logo-text {
+    font-size: 1.5rem; 
+    font-weight: 600;
+}
+
+.sidebar .menu {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar .menu li {
+    margin-bottom: 0.9375rem; 
+}
+
+.sidebar .menu li a {
+    color: #9EB5CD;
+    font-size: 1rem; 
+    text-decoration: none;
+    padding: 0.625rem 0.9375rem; 
+    display: block;
+    border-radius: 0.3125rem; 
+    transition: background 0.3s;
+}
+
+.sidebar .menu li a.active,
+.sidebar .menu li a:hover {
+    background-color: #003366;
+    color: white;
+}
+
+.sidebar .section-title {
+    margin-top: 1.25rem; 
+    color: #A0A0A0;
+    font-weight: 500;
+}
+
+.sidebar .footer {
+    font-size: 0.75rem; 
+    color: #A0A0A0;
+    text-align: center;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    margin-left: 15rem; 
+    padding: 1.875rem; 
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 1rem; 
+    border-radius: 0.9375rem; 
+    margin-bottom: 1.875rem; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-container input {
+    border: none;
+    background-color: #f1f1f1;
+    padding: 0.625rem 1rem; 
+    border-radius: 0.5rem; 
+    width: 100%; 
+    max-width: 30rem; 
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.header-icons .icon {
+    margin-left: 0.9375rem; 
+    cursor: pointer;
+    position: relative;
+}
+
+.header-icons .profile {
+    margin-left: 0.9375rem; 
+    position: relative; 
+}
+
+.header-icons .profile-img {
+    width: 2.5rem; 
+    height: 2.5rem; 
+    border-radius: 50%;
+}
+
+/* Dropdown Styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 10rem; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.header-icons .profile:hover .dropdown-content {
+    display: block; /* Tampilkan saat di-hover */
+}
+
+/* Notification Panel */
+.notification-panel {
+    position: absolute;
+    top: 4.375rem; 
+    right: 1.875rem; 
+    background-color: white;
+    width: 15.625rem; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 0.625rem; 
+    padding: 1rem; 
+    display: none; 
+    z-index: 1000;
+}
+
+.notification-panel h3 {
+    margin-bottom: 0.625rem; 
+}
+
+.notification-panel ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Overview Section */
+.overview {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem; 
+    margin-top: 1.875rem; 
+}
+
+.card {
+    background-color: white;
+    border-radius: 0.625rem; 
+    padding: 1.25rem; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s; /* Animasi saat hover */
+}
+
+.card:hover {
+    transform: scale(1.05); 
+}
+
+.card-content {
+    text-align: center;
+}
+
+.percentage {
+    font-size: 0.875rem; 
+}
+
+.percentage.positive {
+    color: green;
+}
+
+.percentage.negative {
+    color: red;
+}
+
+/* Chart Section */
+.chart-section {
+    margin-top: 1.875rem; 
+}
+
+.chart-card {
+    background-color: white;
+    border-radius: 0.625rem; 
+    padding: 1.25rem; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Popular Products */
+.popular-products {
+    margin-top: 1.875rem; 
+}
+
+.popular-products table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.popular-products th,
+.popular-products td {
+    border: 1px solid #ddd;
+    padding: 0.75rem; 
+    text-align: left;
+}
+
+.popular-products th {
+    background-color: #f1f1f1;
+}
+
+/* Action Button */
+.action-button {
+    margin-top: 1.25rem; 
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.625rem 1.25rem; 
+    border-radius: 0.3125rem; 
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.action-button:hover {
+    background-color: #0056b3;
+}
+
+/* Right Sidebar */
+.right-sidebar {
+    width: 15rem; 
+    background-color: #f9f9f9;
+    border-left: 1px solid #ddd;
+    padding: 1.25rem; 
+}
+
+.right-sidebar .profile-info {
+    text-align: center;
+}
+
+.right-sidebar .right-sidebar-logo {
+    width: 3.75rem; 
+    height: 3.75rem; 
+}
+
+.right-sidebar .reputation {
+    margin-top: 1.25rem; 
+}
+
+.right-sidebar .progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 0.3125rem;
+}
+
+.right-sidebar .progress {
+    height: 0.625rem;
+    background-color: #76c7c0;
+    border-radius: 0.3125rem;
+}
+
+/* Recent Orders */
+.recent-orders {
+    margin-top: 1.25rem; 
+}
+
+.recent-orders ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recent-orders li {
+    margin-bottom: 0.625rem; 
+}
+
+.price {
+    float: right;
+    color: green;
+}
